@@ -728,7 +728,8 @@ html {
     resize: none;
 }
 
-.search-box {
+
+/* .search-box {
     position: absolute;
     top: 110%;
     right: 0;
@@ -742,7 +743,7 @@ html {
 
 .search-box.active {
     clip-path: circle(144% at 100% 0%);
-}
+} */
 
 .search-box input {
     width: 100%;
@@ -756,6 +757,7 @@ html {
 .search-form form {
     display: flex;
     gap: 1.3rem;
+    margin: 2rem;
 }
 
 .search-form form .box {
