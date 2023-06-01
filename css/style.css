@@ -766,6 +766,7 @@ html {
     padding: 1.4rem;
     font-size: 1.8rem;
     color: var(--black);
+    border-radius: 10px;
 }
 
 .search-form form .fa-search {
@@ -774,6 +775,7 @@ html {
     color: var(--white);
     cursor: pointer;
     font-size: 2.5rem;
+    border-radius: 10px;
 }
 
 .search-form form .fa-search:hover {
