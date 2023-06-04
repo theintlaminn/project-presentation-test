@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2023 at 04:49 PM
+-- Generation Time: Jun 04, 2023 at 10:25 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -56,6 +56,13 @@ CREATE TABLE `cart` (
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `user_id`, `pid`, `name`, `price`, `quantity`, `image`) VALUES
+(17, 2, 6, 'steak', 10200, 5, 'dish-6.png');
+
 -- --------------------------------------------------------
 
 --
@@ -67,16 +74,9 @@ CREATE TABLE `messages` (
   `user_id` int(100) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `number` varchar(12) NOT NULL,
+  `number` varchar(15) NOT NULL,
   `message` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `messages`
---
-
-INSERT INTO `messages` (`id`, `user_id`, `name`, `email`, `number`, `message`) VALUES
-(1, 0, 'lapyae', 'user@gmail.com', '6265526452', 'hello');
 
 -- --------------------------------------------------------
 
@@ -103,7 +103,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `method`, `address`, `total_products`, `total_price`, `placed_on`, `payment_status`) VALUES
-(1, 2, 'potato', '5555555555', 'potato@gmail.com', 'cash on delivery', '3, 3, orchid, yangon, yangon, mingalardon, Myanmar - 5', 'cheese cake (1 x 1) - Ice strawberry (1 x 1) - ', 2, '2023-04-28', 'completed');
+(6, 2, 'potato', '5555555555', 'potato@gmail.com', 'cash on delivery', '3, 3, orchid, yangon, yangon, mingalardon, Myanmar - 5', 'Boat ice-cream (6500 x 1) - Cake (7800 x 1) - ', 14300, '2023-04-29', 'completed'),
+(7, 2, 'potato', '5555555555', 'potato@gmail.com', 'cash on delivery', '3, 3, orchid, yangon, yangon, mingalardon, Myanmar - 5', 'blueberry milkshake (3800 x 1) - ', 3800, '2023-05-02', 'completed');
 
 -- --------------------------------------------------------
 
@@ -124,20 +125,33 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `category`, `price`, `image`) VALUES
-(1, 'Beef Burger', 'fast food', 2, 'burger-1.png'),
-(2, 'Cake', 'desserts', 3, 'cake1.png'),
-(4, 'cheese cake', 'desserts', 1, 'dessert-6.png'),
-(5, 'Pasta', 'main dish', 3, 'dish-3.png'),
-(6, 'steak', 'main dish', 3, 'dish-6.png'),
-(7, 'Ice strawberry', 'drinks', 1, 'drink-4.png'),
-(8, 'blueberry milkshake', 'drinks', 1, 'drink.png'),
-(9, 'Hot Coffee', 'drinks', 1, 'coffee4.png'),
-(10, 'sausage Pizza ', 'main dish', 3, 'pizza-3.png'),
-(11, 'Milk tea', 'drinks', 1, 'drink-6.png'),
-(12, 'chocolate cup cake', 'desserts', 2, 'Dessert-PNG-Isolated-Photos.png'),
-(13, 'Fry chicken (5pcs)', 'fast food', 3, 'fry-chicken.png'),
-(14, 'Boat ice-cream', 'desserts', 2, 'sweet1.png'),
-(15, 'Special Steak', 'main dish', 4, 'dish-9.png');
+(1, 'Beef Burger', 'fast food', 4600, 'burger-1.png'),
+(2, 'Cake', 'desserts', 8000, 'dessert-2.png'),
+(4, 'cheese cake', 'desserts', 5000, 'dessert-6.png'),
+(5, 'Pasta', 'main dish', 9900, 'dish-3.png'),
+(6, 'steak', 'main dish', 10200, 'dish-6.png'),
+(7, 'Ice strawberry', 'drinks', 3700, 'drink-4.png'),
+(8, 'blueberry milkshake', 'drinks', 3800, 'drink.png'),
+(9, 'Hot Coffee', 'drinks', 3100, 'coffee4.png'),
+(10, 'sausage Pizza ', 'main dish', 12000, 'pizza-3.png'),
+(11, 'Milk tea', 'drinks', 4300, 'drink-6.png'),
+(12, 'chocolate cup cake', 'desserts', 4800, 'Dessert-PNG-Isolated-Photos.png'),
+(13, 'Fry chicken (5pcs)', 'fast food', 10500, 'fry-chicken.png'),
+(14, 'Boat ice-cream', 'desserts', 6500, 'sweet1.png'),
+(15, 'Special Steak', 'main dish', 15000, 'dish-9.png'),
+(17, 'Kiwi Milkshake', 'drinks', 4600, 'drink2.png'),
+(18, 'Fry Potato ', 'fast food', 4900, 'dish-7.png'),
+(20, 'Grilled Chicken', 'main dish', 17000, 'grilled.png'),
+(21, 'Kobab', 'fast food', 9800, 'kebab.png'),
+(22, 'Detox', 'drinks', 2700, 'drink-3.png'),
+(23, 'Chicken fry noodles', 'main dish', 4800, 'dish-2.png'),
+(24, 'Sushi', 'fast food', 4100, 'sushi.png'),
+(25, 'Miso soup', 'fast food', 4100, '5ea1504ae0ebe6000479458b.png'),
+(26, 'Japanese style fresh meat', 'main dish', 8900, '55850-7-japan-cuisine-png-download-free.png'),
+(27, 'Coconut Ice-cream', 'desserts', 4700, 'dates-ice-cream-lab-28.png'),
+(28, 'ice coffee', 'drinks', 1800, 'drink-2.png'),
+(30, 'Japanese rice', 'main dish', 10200, 'Japanese-Food-Sushi-PNG.png'),
+(31, 'Orange Juice', 'drinks', 2700, 'drink-1.png');
 
 -- --------------------------------------------------------
 
@@ -216,7 +230,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -228,13 +242,13 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `users`
